@@ -25,18 +25,27 @@ function App() {
           .then((response) => {
             console.log("User tracked:", response.data);
           })
-          .catch((error) => {
-            console.error("Error tracking user:", error);
+          .catch((log) => {
+            console.log("log tracking user:", log);
           });
+      } else {
+        console.log("No user information available.");
       }
     } else {
-      console.error("Telegram Web App is not available.");
+      // Telegram Web App is not available
+      console.log("Telegram Web App is not available.");
+      
     }
   }, []);
 
   return (
     <div>
       <h1>Welcome to My Mini App</h1>
+      <p>
+        {window.Telegram && window.Telegram.WebApp
+          ? "You are using the Telegram Web App."
+          : "Telegram Web App is not available. Please use it from within Telegram."}
+      </p>
     </div>
   );
 }
