@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 
-function App() {
+function App() {    
   useEffect(() => {
     // Check if Telegram Web App is available
     if (window.Telegram && window.Telegram.WebApp) {
